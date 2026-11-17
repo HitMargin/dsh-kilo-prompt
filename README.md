@@ -128,3 +128,5 @@ node test/host.test.mjs # 宿主：段落注册/撤销、持久化、跨站拦�
 ## 许可证
 
 MIT
+
+[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
