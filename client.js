@@ -73,24 +73,6 @@ window.__ModuleLoader__.load({
   border-radius: 50%;
   background: var(--dsw-alias-state-success-primary, currentColor);
 }
-.${NS}-tip {
-  position: absolute;
-  left: calc(100% + 8px);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 30;
-  padding: 4px 8px;
-  border-radius: var(--dsw-radius-sm, 6px);
-  background: var(--dsw-alias-bg-layer-3, rgba(0,0,0,.85));
-  color: var(--dsw-alias-label-primary, #fff);
-  font-size: 12px;
-  line-height: 16px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 100ms ease;
-}
-.${NS}-root:hover .${NS}-tip { opacity: 1; }
 .${NS}-root[data-busy="true"] .${NS}-icon { animation: ${NS}-spin 900ms linear infinite; }
 @keyframes ${NS}-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
@@ -111,11 +93,6 @@ window.__ModuleLoader__.load({
         const node = document.getElementById(id)
         if (node && typeof node.remove === 'function') node.remove()
       }
-    }
-
-    /** 气泡/提示用的简易 tooltip 文案节点。 */
-    function Tip({ text }) {
-      return React.createElement('span', { className: `${NS}-tip`, role: 'tooltip' }, text)
     }
 
     /** 图标：一张"文档 + 星"的图，表示"提示词"。 */
@@ -213,6 +190,12 @@ window.__ModuleLoader__.load({
         const label = enabled ? t('disable') : t('enable')
         const title = ready ? `${enabled ? t('on') : t('off')} · ${hint}` : t('notReady')
 
+        // 说明文字只走原生 title。
+        //
+        // 之前这里还渲染了一个自定义气泡（绝对定位在按钮右侧）。侧栏是窄的，
+        // 那行文案比侧栏还宽，于是被祖先的 overflow 裁掉 —— 用户看到的就是
+        // "文本被遮住了"。而原生 title 由浏览器绘制在层最上方，永远不会被裁，
+        // 铃铛插件用的也是它。两者同时存在还会一个 hover 出两个提示。
         return React.createElement(
           'button',
           {
@@ -228,7 +211,6 @@ window.__ModuleLoader__.load({
           },
           React.createElement(Icon),
           enabled ? React.createElement('span', { className: `${NS}-dot` }) : null,
-          React.createElement(Tip, { text: error && error.length > 0 ? error : title }),
         )
       }
     }
