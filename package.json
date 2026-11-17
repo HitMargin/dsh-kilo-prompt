@@ -1,0 +1,52 @@
+{
+  "name": "dsh-kilo-prompt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把 Kilo Code 的内置系统提示词（soul + default）移植到 DSH，侧栏一键开关。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "system-prompt",
+    "persona",
+    "kilo"
+  ],
+  "license": "MIT",
+  "author": "HitMargin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HitMargin/dsh-kilo-prompt.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./prompt": "./prompt.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "prompt.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

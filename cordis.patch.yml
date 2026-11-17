@@ -1,0 +1,8 @@
+# bundle 层：把插件行插进装配树。
+#
+# 插件启用（enabled）与否由插件自己的 settings 文件决定，不是靠这里：
+# 这里只负责让宿主加载插件本体，侧栏按钮才是用户开关。
+- insert:
+    - id: kilo-prompt
+      name: 'dsh-kilo-prompt'
+      config: {}
