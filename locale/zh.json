@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Kilo prompt",
+    "description": "把 Kilo Code 的内置系统提示词（soul + default）移植到 DSH，侧栏一键开关。开启后回答压到 4 行内、不加代码注释、不主动提交、做完会跑 lint 与 typecheck。每次模型请求会多出约 9.6K 字符的提示词；关掉即用回 DSH 默认提示词。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}

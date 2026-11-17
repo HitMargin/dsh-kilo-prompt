@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="A long instruction sheet being compressed into a short reply, with a toggle switched on.">
+  <defs>
+    <linearGradient id="sheet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#eef1f6" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#679EFE"/>
+      <stop offset="1" stop-color="#3964FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 左：说明纸（长） -->
+  <g transform="translate(56 54)">
+    <rect x="0" y="0" width="176" height="196" rx="14" fill="url(#sheet)" stroke="#8b8f98" stroke-width="2"/>
+    <g fill="#8b8f98">
+      <rect x="26" y="30" width="124" height="8" rx="4"/>
+      <rect x="26" y="52" width="100" height="8" rx="4"/>
+      <rect x="26" y="74" width="116" height="8" rx="4"/>
+      <rect x="26" y="96" width="84" height="8" rx="4"/>
+      <rect x="26" y="118" width="110" height="8" rx="4"/>
+      <rect x="26" y="140" width="92" height="8" rx="4"/>
+      <rect x="26" y="162" width="64" height="8" rx="4"/>
+    </g>
+  </g>
+
+  <!-- 中：箭头 -->
+  <g stroke="#8b8f98" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M258 152h44"/>
+    <path d="M290 140l14 12-14 12"/>
+  </g>
+
+  <!-- 右：压缩后的短回复（少而精） -->
+  <g transform="translate(330 84)">
+    <rect x="0" y="0" width="216" height="136" rx="14" fill="url(#sheet)" stroke="#8b8f98" stroke-width="2"/>
+    <g fill="#3964FE">
+      <rect x="28" y="34" width="160" height="10" rx="5"/>
+    </g>
+    <g fill="#8b8f98">
+      <rect x="28" y="60" width="120" height="8" rx="4"/>
+      <rect x="28" y="82" width="140" height="8" rx="4"/>
+    </g>
+    <!-- 开关：已打开 -->
+    <g transform="translate(148 100)">
+      <rect x="0" y="0" width="44" height="24" rx="12" fill="url(#card)"/>
+      <circle cx="32" cy="12" r="8" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- 点缀：星芒，呼应插件图标 -->
+  <path d="M470 52l3.4 8.6 8.6 3.4-8.6 3.4L470 76l-3.4-8.6L458 64l8.6-3.4L470 52Z" fill="#679EFE"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Kilo prompt",
+    "description": "Ports the built-in Kilo Code system prompt (soul + default) into DSH with a one-click sidebar toggle. When on, replies are compressed to under four lines, the model adds no code comments, never commits on its own, and runs lint and typecheck before finishing. Adds about 9.6K characters to every model request; turn it off to use the DSH default prompt.",
+    "detail": "docs/DETAIL.md"
+  }
+}
